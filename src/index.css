@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,500&family=Barlow+Condensed:wght@600;800;900&family=Space+Grotesk:wght@300;700&family=Inter:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #131313;
+  --color-on-surface: #e5e2e1;
+  --color-primary-fixed: #c1f400;
+  --color-on-primary-fixed: #161f00;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container-high: #2a2a2a;
+  --font-headline: "Barlow Condensed", sans-serif;
+  --font-body: "Barlow", sans-serif;
+}
+
+@layer utilities {
+  .editorial-text-stroke {
+    -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+    color: transparent;
+  }
+  .img-hover-swap:hover .img-front {
+    opacity: 0;
+  }
+  .img-hover-swap:hover .img-back {
+    opacity: 1;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed);
+}
